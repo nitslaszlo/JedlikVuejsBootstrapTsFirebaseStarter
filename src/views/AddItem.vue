@@ -29,7 +29,7 @@ import { db } from "./firebaseApp";
 
 @Component
 export default class AddItem extends Vue {
-  newItem: {
+  private newItem: {
     name: string;
     price: string;
   };
@@ -42,7 +42,7 @@ export default class AddItem extends Vue {
     };
   }
 
-  addItem() {
+  private addItem(): void {
     // prettier-ignore
     db.collection("locations")
       .add(this.newItem )

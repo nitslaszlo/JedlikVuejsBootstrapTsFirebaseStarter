@@ -28,9 +28,7 @@ import { Component, Vue } from "vue-property-decorator";
 import { db } from "./firebaseApp";
 @Component
 export default class EditItem extends Vue {
-  // prettier-ignore
-  // @Prop() private id!: string;
-  newItem: {
+  private newItem: {
     name: string;
     price: string;
   };
@@ -43,9 +41,9 @@ export default class EditItem extends Vue {
     };
   }
 
-  mounted() {
-    var docRef = db.collection("locations").doc(this.$route.params.id);
-    var getDoc = docRef
+  private mounted(): void {
+    let docRef = db.collection("locations").doc(this.$route.params.id);
+    let getDoc = docRef
       .get()
       .then(doc => {
         if (!doc.exists) {
@@ -61,11 +59,11 @@ export default class EditItem extends Vue {
       });
   }
 
-  updateItem() {
-    var docRef = db.collection("locations").doc(this.$route.params.id);
-    var getDoc = docRef
+  private updateItem(): void {
+    let docRef = db.collection("locations").doc(this.$route.params.id);
+    let getDoc = docRef
       .update(this.newItem)
-      .then(doc => {
+      .then(() => {
         console.log("Update succes!");
       })
       .catch(err => {

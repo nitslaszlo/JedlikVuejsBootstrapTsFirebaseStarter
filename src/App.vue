@@ -1,15 +1,3 @@
-/* <atemplate>
-//   <div id="app">
-//     <div id="nav">
-//       <router-link to="/">Home</router-link> |
-//       <router-link to="/add">Add item</router-link>
-//       <router-link to="/edit/:id">Edit item</router-link>
-//       <router-link to="/list">List item</router-link>
-//     </div>
-//     <router-view/>
-//   </div>
-// </atemplate>
-
 <template>
   <div id="app" class="container">
     <nav class="navbar navbar-expand-sm bg-light">

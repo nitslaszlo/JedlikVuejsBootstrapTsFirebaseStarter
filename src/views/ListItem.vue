@@ -55,7 +55,7 @@ export default class ListItem extends Vue {
       });
   }
   @Watch("locations")
-  private onLocationsChanged(value: number, oldValue: number) {
+  private onLocationsChanged(value: number, oldValue: number): void {
     console.log("invoke: onLocationsChanged");
   }
 }
