@@ -4,7 +4,7 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <th>Item Sn</th>
+          <th>No</th>
           <th>Item Name</th>
           <th>Item Price</th>
           <th>Item Key</th>
@@ -18,7 +18,7 @@
             <td>{{ item.price }}</td>
             <td>{{ item.id }}</td>
             <td>
-                <router-link :to="{ name: 'Edit', params: {id: item.id} }" class="btn btn-warning">
+                <router-link v-bind:to="{ name: 'Edit', params: {id: item.id} }" class="btn btn-warning">
                   Edit
                 </router-link>
             </td>
