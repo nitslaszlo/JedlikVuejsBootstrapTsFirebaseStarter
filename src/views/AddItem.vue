@@ -43,7 +43,6 @@ export default class AddItem extends Vue {
   }
 
   private addItem (): void {
-    // prettier-ignore
     db.collection("locations")
       .add(this.newItem)
       .then(docRef => {
