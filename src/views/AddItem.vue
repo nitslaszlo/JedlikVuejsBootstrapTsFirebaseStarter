@@ -34,7 +34,7 @@ export default class AddItem extends Vue {
     price: string;
   };
 
-  constructor() {
+  constructor () {
     super();
     this.newItem = {
       name: "",
@@ -42,10 +42,10 @@ export default class AddItem extends Vue {
     };
   }
 
-  private addItem(): void {
+  private addItem (): void {
     // prettier-ignore
     db.collection("locations")
-      .add(this.newItem )
+      .add(this.newItem)
       .then(docRef => {
         alert(`Document written with ID: ${docRef.id}`);
       })

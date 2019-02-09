@@ -33,7 +33,7 @@ export default class EditItem extends Vue {
     price: string;
   };
 
-  constructor() {
+  constructor () {
     super();
     this.newItem = {
       name: "",
@@ -41,7 +41,7 @@ export default class EditItem extends Vue {
     };
   }
 
-  private mounted(): void {
+  private mounted (): void {
     let docRef = db.collection("locations").doc(this.$route.params.id);
     let getDoc = docRef
       .get()
@@ -59,7 +59,7 @@ export default class EditItem extends Vue {
       });
   }
 
-  private updateItem(): void {
+  private updateItem (): void {
     let docRef = db.collection("locations").doc(this.$route.params.id);
     let getDoc = docRef
       .update(this.newItem)

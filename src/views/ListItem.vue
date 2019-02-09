@@ -42,7 +42,7 @@ import { db } from "./firebaseApp";
 export default class ListItem extends Vue {
   private locations: any = [];
 
-  private deleteItem(key: any): void {
+  private deleteItem (key: any): void {
     // prettier-ignore
     db.collection("locations")
       .doc(key)
@@ -55,7 +55,7 @@ export default class ListItem extends Vue {
       });
   }
   @Watch("locations")
-  private onLocationsChanged(value: number, oldValue: number): void {
+  private onLocationsChanged (value: number, oldValue: number): void {
     console.log("invoke: onLocationsChanged");
   }
 }
