@@ -45,6 +45,10 @@
     ],
     "rules": {
       "no-console": "off",
+      "space-before-function-paren": [
+        "error",
+        "never"
+      ],
       "vue/component-name-in-template-casing": "ignore",
       "quotes": [
         "error",

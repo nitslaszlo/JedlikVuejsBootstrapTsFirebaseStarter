@@ -12,20 +12,21 @@
         </tr>
       </thead>
       <tbody>
-          <tr v-for="(item, index) of locations" v-bind:key="index">
-            <td>{{ index }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.price }}</td>
-            <td>{{ item.id }}</td>
-            <td>
-                <router-link v-bind:to="{ name: 'Edit', params: {id: item.id} }" class="btn btn-warning">
-                  Edit
-                </router-link>
-            </td>
-            <td>
-              <button v-on:click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
-            </td>
-          </tr>
+        <tr v-for="(item, index) of locations" v-bind:key="index">
+          <td>{{ index }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.id }}</td>
+          <td>
+            <router-link
+              v-bind:to="{ name: 'Edit', params: {id: item.id} }"
+              class="btn btn-warning"
+            >Edit</router-link>
+          </td>
+          <td>
+            <button v-on:click="deleteItem(item.id)" class="btn btn-danger">Delete</button>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -42,7 +43,7 @@ import { db } from "./firebaseApp";
 export default class ListItem extends Vue {
   private locations: any = [];
 
-  private deleteItem (key: any): void {
+  private deleteItem(key: any): void {
     // prettier-ignore
     db.collection("locations")
       .doc(key)
@@ -55,7 +56,7 @@ export default class ListItem extends Vue {
       });
   }
   @Watch("locations")
-  private onLocationsChanged (value: number, oldValue: number): void {
+  private onLocationsChanged(value: number, oldValue: number): void {
     console.log("invoke: onLocationsChanged");
   }
 }
