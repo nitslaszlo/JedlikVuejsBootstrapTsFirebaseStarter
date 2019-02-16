@@ -5,7 +5,7 @@
         <h3>Add Item</h3>
       </div>
       <div class="card-body">
-        <form v-on:submit.prevent="addItem">
+        <form @submit.prevent="addItem">
           <div class="form-group">
             <label>Item Name:</label>
             <input type="text" class="form-control" v-model="newItem.name">
@@ -45,10 +45,10 @@ export default class AddItem extends Vue {
   private addItem(): void {
     db.collection("locations")
       .add(this.newItem)
-      .then(docRef => {
+      .then((docRef: any) => {
         alert(`Document written with ID: ${docRef.id}`);
       })
-      .catch(error => {
+      .catch((error: any) => {
         alert(`Error adding document: ${error}`);
       });
     this.newItem.name = "";

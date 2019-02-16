@@ -5,7 +5,7 @@
         <h3>Edit Item</h3>
       </div>
       <div class="card-body">
-        <form v-on:submit.prevent="updateItem">
+        <form @submit.prevent="updateItem">
           <div class="form-group">
             <label>Item Name:</label>
             <input type="text" class="form-control" v-model="newItem.name">
@@ -42,10 +42,10 @@ export default class EditItem extends Vue {
   }
 
   private mounted(): void {
-    let docRef = db.collection("locations").doc(this.$route.params.id);
-    let getDoc = docRef
+    const docRef: any = db.collection("locations").doc(this.$route.params.id);
+    const getDoc: any = docRef
       .get()
-      .then(doc => {
+      .then((doc: any) => {
         if (!doc.exists) {
           console.log("No such document!");
         } else {
@@ -54,19 +54,19 @@ export default class EditItem extends Vue {
           this.newItem.price = doc.data()!.price;
         }
       })
-      .catch(err => {
+      .catch((err: any) => {
         console.log("Error getting document", err);
       });
   }
 
   private updateItem(): void {
-    let docRef = db.collection("locations").doc(this.$route.params.id);
-    let getDoc = docRef
+    const docRef = db.collection("locations").doc(this.$route.params.id);
+    const getDoc = docRef
       .update(this.newItem)
       .then(() => {
         console.log("Update succes!");
       })
-      .catch(err => {
+      .catch((err: any) => {
         console.log("Update Error!", err);
       });
     this.$router.push("/list");

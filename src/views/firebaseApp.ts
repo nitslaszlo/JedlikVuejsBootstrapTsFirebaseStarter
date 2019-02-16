@@ -1,7 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 
-const config = {
+const config: any = {
   apiKey: "AIzaSyCEaZGpRzwptj11kiKzzL_H7J9nq2O51us",
   authDomain: "my-vuejs-typescript.firebaseapp.com",
   databaseURL: "https://my-vuejs-typescript.firebaseio.com",
@@ -10,7 +10,7 @@ const config = {
   messagingSenderId: "863094360929"
 };
 
-let app = firebase.initializeApp(config);
-const database = app.firestore();
+const app: any = firebase.initializeApp(config);
+const database: any = app.firestore();
 database.settings({ timestampsInSnapshots: true });
-export const db = database;
+export const db: any = database;

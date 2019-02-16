@@ -51,7 +51,7 @@ export default class ListItem extends Vue {
       .then(() => {
         alert("Document deleted!");
       })
-      .catch(error => {
+      .catch((error: any) => {
         alert(`Error deleting document: ${error}`);
       });
   }
